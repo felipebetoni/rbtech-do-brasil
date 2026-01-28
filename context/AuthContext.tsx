@@ -41,7 +41,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       
       if (!storedHash) {
         // Primeira visita - define senha padrão (vem de variável de ambiente)
-        const defaultPassword = import.meta.env.VITE_DEFAULT_ADMIN_PASSWORD || 'admin123';
+        const defaultPassword = import.meta.env.VITE_DEFAULT_ADMIN_PASSWORD;
         const hash = await hashString(defaultPassword);
         setStoredPasswordHash(hash);
         storedHash = hash;
